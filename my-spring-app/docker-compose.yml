@@ -1,0 +1,13 @@
+version: '3'
+services:
+    web:
+        image: my-spring-app:0.0.1
+        ports:
+            - "80:8080"
+        environment:
+            - DB_HOST=dbserver
+    dbserver:
+        image: mysql:latest
+        volumes:
+            - /data/mysql:/var/lib/mysql
+
